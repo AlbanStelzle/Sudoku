@@ -16,7 +16,7 @@ public void actionPerformed(ActionEvent e){
 
         if(nomButton.equals("JOUER")) {
                 fenetre.dispose();
-                new JouerMenu();
+                new MenuJouerPrincipal();
 
         }else if(nomButton.equals("QUITTER")) {
                 System.exit(0);

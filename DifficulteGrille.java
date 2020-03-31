@@ -10,7 +10,7 @@ public class DifficulteGrille{
         JButton difficile = new JButton("DIFFICILE");
         JButton retour = new JButton("RETOUR");
         JPanel panneau = new JPanel();
-
+DifficulteGrilleEvent ctrl = new DifficulteGrilleEvent(fenetre);
         panneau.setLayout(null);
 
         facile.setLocation(150, 50);
@@ -18,10 +18,10 @@ public class DifficulteGrille{
         difficile.setLocation(150, 250);
         retour.setLocation(150, 400);
 
-        facile.setSize(200, 20);
-        moyen.setSize(200, 20);
-        difficile.setSize(200, 20);
-        retour.setSize(200, 20);
+        facile.setSize(200, 40);
+        moyen.setSize(200, 40);
+        difficile.setSize(200, 40);
+        retour.setSize(200, 40);
 
         facile.addActionListener(ctrl);
         moyen.addActionListener(ctrl);

@@ -23,9 +23,9 @@ public AccueilMenu(){
         jouer.setLocation(150, 150);
         quitter.setLocation(150,300);
 
-        titre.setSize(200, 20);
-        jouer.setSize(200,20);
-        quitter.setSize(200,20);
+        titre.setSize(200, 40);
+        jouer.setSize(200,40);
+        quitter.setSize(200,40);
 
         jouer.addActionListener(ctrl);
         quitter.addActionListener(ctrl);

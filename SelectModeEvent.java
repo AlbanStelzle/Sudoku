@@ -3,11 +3,9 @@ import javax.swing.JFrame;
 
 public class SelectModeEvent implements ActionListener {
     private JFrame fenetre;
-    private String nomFichier;
 
-    public SelectModeEvent(JFrame fen, String filename) {
+    public SelectModeEvent(JFrame fen) {
         this.fenetre = fen;
-        this.nomFichier = filename;
     }
 
     public void actionPerformed(ActionEvent e) {

@@ -1,41 +1,39 @@
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.Font;
 
-public class JouerMenu {
+public class MenuJouerPrincipal {
 
-        public JouerMenu() {
+        public MenuJouerPrincipal() {
                 JFrame fenetre = new JFrame();
-                JButton jouer = new JButton("JOUER SUR UNE MAP");
-                JButton creer = new JButton("CREER UNE MAP");
-                JButton retour = new JButton("RETOUR");
-                JPanel panneau = new JPanel();
                 JLabel titre = new JLabel("MENU PRINCIPAL");
                 Font policeTitre = new Font("Arial", Font.BOLD, 20);
-                JouerEvenement ctrl = new JouerEvenement(fenetre);
+
+                JButton jouer1 = new JButton("JOUER SUR UNE GRILLE");
+                JButton creer = new JButton("CREER UNE GRILLE");
+                JButton retour = new JButton("RETOUR");
+                JPanel panneau = new JPanel();
                 panneau.setLayout(null);
 
                 titre.setFont(policeTitre);
                 titre.setHorizontalAlignment(JLabel.CENTER);
 
-                titre.setLocation(150, 50);
-                jouer.setLocation(150, 100);
+                titre.setLocation(0, 50);
+                jouer1.setLocation(150, 100);
                 creer.setLocation(150, 200);
                 retour.setLocation(150, 300);
 
-                titre.setSize(200, 20);
-                jouer.setSize(200, 20);
-                creer.setSize(200, 20);
-                retour.setSize(200, 20);
+                titre.setSize(500, 40);
+                jouer1.setSize(200, 40);
+                creer.setSize(200, 40);
+                retour.setSize(200, 40);
+                MenuJouerPrincipalEvent ctrl = new MenuJouerPrincipalEvent(fenetre);
 
-                jouer.addActionListener(ctrl);
+                jouer1.addActionListener(ctrl);
                 creer.addActionListener(ctrl);
                 retour.addActionListener(ctrl);
 
                 panneau.add(titre);
-                panneau.add(jouer);
+                panneau.add(jouer1);
                 panneau.add(creer);
                 panneau.add(retour);
                 panneau.setSize(fenetre.getWidth(), fenetre.getHeight());
