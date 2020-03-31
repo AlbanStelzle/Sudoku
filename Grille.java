@@ -153,7 +153,7 @@ public class Grille {
         }
     }
 
-    public void supprCase() {
+    public void supprCase() { // supprime les cases en fonction de la demande du programme (difficulté du jeu )
         int compt = this.nbCaseVide;
         int i = 0;
         int y = 0;
