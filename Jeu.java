@@ -15,7 +15,9 @@ import java.awt.Color;
 import java.text.NumberFormat;
 
 public class Jeu {
+    private String nomG;
     private JButton button = new JButton();
+    double t = 0;
     private int[][] g;
     private int statut;
 
@@ -25,6 +27,23 @@ public class Jeu {
         this.statut = 1;
     }
 
+    public Jeu(int[][] grille, String filename) {
+        this.nomG = filename;
+        this.button.setText("Go");
+        this.g = grille;
+        this.statut = 0;
+
+    }
+
+    public Jeu(int[][] grille, String filename, double time) {
+        this.nomG = filename;
+        this.button.setText("Retour au menu principal");
+        this.g = grille;
+        this.statut = 0;
+        this.t = time;
+
+    }
+
     public void Jouer() {
         JFrame fenetre = new JFrame();
         GridBagLayout gestionnaire = new GridBagLayout();
@@ -32,9 +51,24 @@ public class Jeu {
 
         JPanel panneau2 = new JPanel();
         JPanel panneau = new JPanel();
+        JPanel info = new JPanel();
 
         JFormattedTextField[][] caseJ = new JFormattedTextField[9][9];
 
+        JLabel nomGrille = new JLabel(this.nomG);
+        JLabel timer = new JLabel("Temps pour résoudre la grille : " + this.t + " seconde.");
+        Font policeTitre = new Font("Arial", Font.BOLD, 20);
+        Font policeGrille = new Font("Arial", Font.BOLD, 15);
+
+        nomGrille.setFont(policeTitre);
+        nomGrille.setHorizontalAlignment(JLabel.CENTER);
+        info.add(nomGrille);
+
+        if (this.t != 0) {
+            info.add(timer);
+        }
+
+        fenetre.add(info, BorderLayout.NORTH);
 
         for (int i = 0; i < 9; i++) {
             for (int y = 0; y < 9; y++) {
@@ -43,6 +77,7 @@ public class Jeu {
 
                 caseJ[i][y] = new JFormattedTextField(NumberFormat.getIntegerInstance());
                 caseJ[i][y].setDocument(new JTextFieldLimit(1));
+                caseJ[i][y].setFont(policeGrille);
 
                 if (this.g[i][y] == 0) {
                     caseJ[i][y].setText("");
@@ -55,7 +90,7 @@ public class Jeu {
                 caseJ[i][y].setPreferredSize(new Dimension(70, 70));
                 caseJ[i][y].setHorizontalAlignment(JFormattedTextField.CENTER);
 
-                if (this.g[i][y] != 0 ||( this.g[i][y] == 0 && (this.statut >0))) {
+                if (this.g[i][y] != 0 || (this.g[i][y] == 0 && this.statut == 1)) {
                     caseJ[i][y].setEditable(false);
                 }
 
