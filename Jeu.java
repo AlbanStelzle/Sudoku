@@ -81,7 +81,6 @@ public class Jeu {
 
                 if (this.g[i][y] == 0) {
                     caseJ[i][y].setText("");
-                    caseJ[i][y].setForeground(Color.BLUE);
 
                 } else {
                     caseJ[i][y].setText("" + this.g[i][y]);

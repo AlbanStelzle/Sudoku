@@ -31,8 +31,8 @@ public class SelectModeEvent implements ActionListener {
             new Jeu(this.grilleF, this.nomFichier, tempstotal).Jouer();
         } else if (button == "MANUEL") {
             this.fenetre.dispose();
-            // classe pour lire fichier
-            //new Jeu(this.grille).Jouer();
+            this.grille= new LectureGrille(this.nomFichier).read();
+            new Jeu(this.grille,this.nomFichier).Jouer();
         }
     }
 

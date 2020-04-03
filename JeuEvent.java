@@ -46,7 +46,18 @@ public class JeuEvent implements ActionListener {
 
         }
         if (button == "Go") {
+            z = new CheckGrille(this.gJ).Corriger();
+            if (z != 0) {
+                JOptionPane.showMessageDialog(null, "Votre grille est incorrecte, corrigez la !", "Incorrect",
+                        JOptionPane.ERROR_MESSAGE);
 
+            } else {
+                JOptionPane.showMessageDialog(null,
+                        "Félicitation vous avez réussi cette grille, retour au menu principal", "Bravo !",
+                        JOptionPane.PLAIN_MESSAGE);
+                this.fenetre.dispose();
+                new MenuJouerPrincipal();
+            }
         }
         if (button == "Retour au menu principal") {
             this.fenetre.dispose();

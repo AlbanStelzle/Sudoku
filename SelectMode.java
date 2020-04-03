@@ -14,7 +14,7 @@ public class SelectMode {
         JPanel panneau = new JPanel();
         JLabel titre = new JLabel("SELECTIONNEZ UN MODE");
         Font policeTitre = new Font("Arial", Font.BOLD, 20);
-        SelectModeEvent ctrl = new SelectModeEvent(fenetre);
+        SelectModeEvent ctrl = new SelectModeEvent(fenetre,nomFichier);
         panneau.setLayout(null);
 
         titre.setFont(policeTitre);
