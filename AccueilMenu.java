@@ -1,8 +1,9 @@
-import javax.swing.*;
 import java.awt.Font;
 
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class AccueilMenu {
 

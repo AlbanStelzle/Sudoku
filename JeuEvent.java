@@ -7,10 +7,12 @@ public class JeuEvent implements ActionListener {
     private int[][] gJ = new int[9][9];
     private JFormattedTextField[][] text = new JFormattedTextField[9][9];
     private JFrame fenetre;
+    private int statut;
 
-    public JeuEvent(JFormattedTextField[][] grilleJ, JFrame fen) {
+    public JeuEvent(JFormattedTextField[][] grilleJ, JFrame fen ,int s) {
         this.text = grilleJ;
         this.fenetre = fen;
+        this.statut = s;
     }
 
     public void ConversionGrille() {
@@ -33,8 +35,9 @@ public class JeuEvent implements ActionListener {
         int z = 0;
         button = e.getActionCommand();
         this.ConversionGrille();
+        String[] difficulte = { "Facile", "Moyen", "Difficile" };
 
-        if (button == "Sauvegarder") {
+        if (button == "Sauvegarder" && this.statut == 1) {
 
             String nomGrille = JOptionPane.showInputDialog(null, "Veuillez donner un nom à votre grille.",
                     "Nommez votre grille", JOptionPane.QUESTION_MESSAGE);
@@ -44,7 +47,44 @@ public class JeuEvent implements ActionListener {
             this.fenetre.dispose();
             new MenuJouerPrincipal();
 
+        }else if(button == "Sauvegarder" && this.statut == 2){
+            
+
+            z= new CheckGrille(this.gJ).Corriger();
+
+            if (z != 0) {
+                JOptionPane.showMessageDialog(null, "Votre grille est incorrecte.Veuillez la modifier", "Erreur",
+                        JOptionPane.INFORMATION_MESSAGE);
+            } else {
+
+                new Grille(this.gJ).supprCase();
+
+                String nomGrille = JOptionPane.showInputDialog(null, "Veuillez donner un nom à votre grille.",
+                        "Nommez votre grille", JOptionPane.QUESTION_MESSAGE);
+
+                int choixPopup = JOptionPane.showOptionDialog(null, "Choisissez une difficulté", " Difficulté",
+                        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, difficulte,
+                        difficulte[2]);
+                int nbCaseVide=0;
+
+                if(choixPopup==0){
+                    nbCaseVide=40;
+                }else if(choixPopup==1){
+                    nbCaseVide=50;
+                }else if(choixPopup==2){
+                    nbCaseVide=60;
+                }
+                new Grille(this.gJ,nbCaseVide).supprCase();
+                new SauvegarderGrille(this.gJ, nomGrille);
+
+                JOptionPane.showMessageDialog(null, "Sauvegarde terminée ! Retour au menu principal.",
+                        "Sauvegarde terminée !", JOptionPane.QUESTION_MESSAGE);
+
+                this.fenetre.dispose();
+                new MenuJouerPrincipal();
+            }
         }
+        
         if (button == "Go") {
             z = new CheckGrille(this.gJ).Corriger();
             if (z != 0) {

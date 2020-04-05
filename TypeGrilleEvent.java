@@ -18,6 +18,8 @@ public class TypeGrilleEvent implements ActionListener {
 
         } else if (nomButton.equals("GRILLE MANUELLE")) {
             fenetre.dispose();
+            new Jeu("Manuel").Jouer();
+
         } else if (nomButton.equals("RETOUR")) {
             fenetre.dispose();
             new MenuJouerPrincipal();

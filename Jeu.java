@@ -43,6 +43,13 @@ public class Jeu {
         this.t = time;
 
     }
+    public Jeu(String mode){
+        this.statut = 2;
+        this.g = new int[9][9];
+
+        this.button.setText("Sauvegarder");
+
+    }
 
     public void Jouer() {
         JFrame fenetre = new JFrame();
@@ -98,7 +105,7 @@ public class Jeu {
         }
 
         panneau.setLayout(new GridLayout(9, 9));
-        JeuEvent event = new JeuEvent(caseJ, fenetre);
+        JeuEvent event = new JeuEvent(caseJ, fenetre,this.statut);
 
         this.button.addActionListener(event);
         panneau2.setLayout(gestionnaire);
