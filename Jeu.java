@@ -67,6 +67,7 @@ public class Jeu {
         Font policeTitre = new Font("Arial", Font.BOLD, 20);
         Font policeGrille = new Font("Arial", Font.BOLD, 15);
 
+
         nomGrille.setFont(policeTitre);
         nomGrille.setHorizontalAlignment(JLabel.CENTER);
         info.add(nomGrille);
@@ -88,6 +89,7 @@ public class Jeu {
 
                 if (this.g[i][y] == 0) {
                     caseJ[i][y].setText("");
+                    caseJ[i][y].setForeground(Color.BLUE);
 
                 } else {
                     caseJ[i][y].setText("" + this.g[i][y]);
@@ -105,7 +107,9 @@ public class Jeu {
         }
 
         panneau.setLayout(new GridLayout(9, 9));
-        JeuEvent event = new JeuEvent(caseJ, fenetre,this.statut);
+        DesignCase design = new DesignCase(caseJ);
+        design.colorier();
+        JeuEvent event = new JeuEvent(caseJ, fenetre, this.statut);
 
         this.button.addActionListener(event);
         panneau2.setLayout(gestionnaire);
