@@ -1,4 +1,5 @@
-import javax.swing.*;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import java.awt.event.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 

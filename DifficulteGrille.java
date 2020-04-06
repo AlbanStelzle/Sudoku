@@ -2,15 +2,15 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class DifficulteGrille{
-    public DifficulteGrille(){
+public class DifficulteGrille {
+    public DifficulteGrille() {
         JFrame fenetre = new JFrame();
         JButton facile = new JButton("FACILE");
         JButton moyen = new JButton("MOYEN");
         JButton difficile = new JButton("DIFFICILE");
         JButton retour = new JButton("RETOUR");
         JPanel panneau = new JPanel();
-DifficulteGrilleEvent ctrl = new DifficulteGrilleEvent(fenetre);
+        DifficulteGrilleEvent ctrl = new DifficulteGrilleEvent(fenetre);
         panneau.setLayout(null);
 
         facile.setLocation(150, 50);
@@ -39,6 +39,5 @@ DifficulteGrilleEvent ctrl = new DifficulteGrilleEvent(fenetre);
         fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fenetre.setVisible(true);
 
-    
     }
 }
