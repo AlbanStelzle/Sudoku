@@ -6,16 +6,18 @@ import javax.swing.JLabel;
 import java.awt.Font;
 
 /**
- * La classe <code>SelectMode</code> est utilisée pour proposer au joueur le mode qu'il veut pour la résolution de la grille
+ * La classe <code>SelectMode</code> est utilisée pour proposer au joueur le
+ * mode qu'il veut pour la résolution de la grille
  * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
  */
 public class SelectMode {
-/**
- * Constructeur prenant un nom de Fichier
- * @param nomFichier String
- */
+    /**
+     * Constructeur prenant un nom de Fichier
+     * 
+     * @param nomFichier String
+     */
     public SelectMode(String nomFichier) {
         JFrame fenetre = new JFrame();
         JButton automatique = new JButton("AUTOMATIQUE");
@@ -23,7 +25,7 @@ public class SelectMode {
         JPanel panneau = new JPanel();
         JLabel titre = new JLabel("SELECTIONNEZ UN MODE");
         Font policeTitre = new Font("Arial", Font.BOLD, 20);
-        SelectModeEvent ctrl = new SelectModeEvent(fenetre,nomFichier);
+        SelectModeEvent ctrl = new SelectModeEvent(fenetre, nomFichier);
         panneau.setLayout(null);
 
         titre.setFont(policeTitre);

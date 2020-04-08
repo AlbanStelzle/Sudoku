@@ -2,8 +2,8 @@ import javax.swing.JFrame;
 import java.awt.event.*;
 
 /**
- * La classe <code>TypeGrilleEvent</code> est utilisée pour gérer l'utilisation des
- * boutons et d'envoyer sur la classe jeu en fonction du choix du joueur
+ * La classe <code>TypeGrilleEvent</code> est utilisée pour gérer l'utilisation
+ * des boutons et d'envoyer sur la classe jeu en fonction du choix du joueur
  * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
@@ -11,6 +11,11 @@ import java.awt.event.*;
 public class TypeGrilleEvent implements ActionListener {
     private JFrame fenetre;
 
+    /**
+     * Constructeur
+     * 
+     * @param fen
+     */
     public TypeGrilleEvent(JFrame fen) {
         this.fenetre = fen;
     }

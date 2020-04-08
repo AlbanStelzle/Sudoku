@@ -27,22 +27,24 @@ public class Jeu {
     private int[][] g;
     private int statut;
 
-/**
- * Constructeur prenant qu'une grille
- * 
- * @param grille int[][]
- *
- */
+    /**
+     * Constructeur prenant qu'une grille
+     * 
+     * @param grille int[][]
+     *
+     */
     public Jeu(int[][] grille) {
         this.button.setText("Sauvegarder");
         this.g = grille;
         this.statut = 1;
     }
-/**
- * Constructeur prenant qu'une grille et un nom de grille
- * @param grille int[][]
- * @param filename nom de grille
- */
+
+    /**
+     * Constructeur prenant qu'une grille et un nom de grille
+     * 
+     * @param grille   int[][]
+     * @param filename nom de grille
+     */
     public Jeu(int[][] grille, String filename) {
         this.nomG = filename;
         this.button.setText("Go");
@@ -51,13 +53,14 @@ public class Jeu {
 
     }
 
-/**
- * Constructeur prenant qu'une grille, un nom de grille et un double pour afficher le timer
- * 
- * @param grille int[][]
- * @param filename string
- * @param time double
- */
+    /**
+     * Constructeur prenant qu'une grille, un nom de grille et un double pour
+     * afficher le timer
+     * 
+     * @param grille   int[][]
+     * @param filename string
+     * @param time     double
+     */
     public Jeu(int[][] grille, String filename, double time) {
         this.nomG = filename;
         this.button.setText("Retour au menu principal");
@@ -66,20 +69,24 @@ public class Jeu {
         this.t = time;
 
     }
-/**
- * Constructeur prenant qu'un nom de mode de jeu (manuel ou automatique)
- * @param mode
- */
-    public Jeu(String mode){
+
+    /**
+     * Constructeur prenant qu'un nom de mode de jeu (manuel ou automatique)
+     * 
+     * @param mode
+     */
+    public Jeu(String mode) {
         this.statut = 2;
         this.g = new int[9][9];
 
         this.button.setText("Sauvegarder");
 
     }
-/**
- * Méthode qui affiche la grille au joueur, et en fonction du constructeur utilisée, permet de jouer ou de créer une grille
- */
+
+    /**
+     * Méthode qui affiche la grille au joueur, et en fonction du constructeur
+     * utilisée, permet de jouer ou de créer une grille
+     */
     public void Jouer() {
         JFrame fenetre = new JFrame();
         GridBagLayout gestionnaire = new GridBagLayout();
@@ -95,7 +102,6 @@ public class Jeu {
         JLabel timer = new JLabel("Temps pour résoudre la grille : " + this.t + " seconde.");
         Font policeTitre = new Font("Arial", Font.BOLD, 20);
         Font policeGrille = new Font("Arial", Font.BOLD, 15);
-
 
         nomGrille.setFont(policeTitre);
         nomGrille.setHorizontalAlignment(JLabel.CENTER);

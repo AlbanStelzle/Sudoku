@@ -3,20 +3,29 @@ import javax.swing.JFormattedTextField;
 import java.awt.Color;
 
 /**
- * La classe <code>DesignCase</code> est utilisée pour rentre les grilles plus agréable à l'oeil
+ * La classe <code>DesignCase</code> est utilisée pour rentre les grilles plus
+ * agréable à l'oeil
+ * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
- */public class DesignCase {
+ */
+public class DesignCase {
 
     private JFormattedTextField[][] caseJ;
 
+    /**
+     * Constructeur qui prendre un tableau de JFormattedTextField en paramètre
+     * 
+     * @param grille JFormattedTextField[][]
+     */
     public DesignCase(JFormattedTextField[][] grille) {
         this.caseJ = grille;
     }
-/**
- * Méthode qui colorie la grille 
- *
- */
+
+    /**
+     * Méthode qui colorie la grille
+     *
+     */
     public void colorier() {
         for (int i = 0; i < 9; i++) {
             for (int y = 0; y < 9; y++) {

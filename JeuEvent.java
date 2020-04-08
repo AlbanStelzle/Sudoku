@@ -4,7 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
- * La classe <code>JeuEvent</code> est utilisée pour gérer l'utilisation des boutons et de convertir la grille de texte en grille d'entier
+ * La classe <code>JeuEvent</code> est utilisée pour gérer l'utilisation des
+ * boutons et de convertir la grille de texte en grille d'entier
  * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
@@ -14,20 +15,24 @@ public class JeuEvent implements ActionListener {
     private JFormattedTextField[][] text = new JFormattedTextField[9][9];
     private JFrame fenetre;
     private int statut;
-/**
- * Constructeur qui récupère la grille de texte, la fentre et un entier pour le statut
- * @param grilleJ int[][]
- * @param fen JFrame
- * @param s int
- */
-    public JeuEvent(JFormattedTextField[][] grilleJ, JFrame fen ,int s) {
+
+    /**
+     * Constructeur qui récupère la grille de texte, la fentre et un entier pour le
+     * statut
+     * 
+     * @param grilleJ int[][]
+     * @param fen     JFrame
+     * @param s       int
+     */
+    public JeuEvent(JFormattedTextField[][] grilleJ, JFrame fen, int s) {
         this.text = grilleJ;
         this.fenetre = fen;
         this.statut = s;
     }
-/**
- * Méthode qui convertit la grille de texte donnée en grille de int
- */
+
+    /**
+     * Méthode qui convertit la grille de texte donnée en grille de int
+     */
     public void ConversionGrille() {
         for (int i = 0; i < 9; i++) {
             for (int y = 0; y < 9; y++) {
@@ -42,9 +47,11 @@ public class JeuEvent implements ActionListener {
             }
         }
     }
-/**
- * Méthode qui récupère les evenement et adapte en fonction de quel type de bouton est utilisé
- */
+
+    /**
+     * Méthode qui récupère les evenement et adapte en fonction de quel type de
+     * bouton est utilisé
+     */
     public void actionPerformed(ActionEvent e) {
         String button;
         int z = 0;
@@ -62,10 +69,9 @@ public class JeuEvent implements ActionListener {
             this.fenetre.dispose();
             new MenuJouerPrincipal();
 
-        }else if(button == "Sauvegarder" && this.statut == 2){
-            
+        } else if (button == "Sauvegarder" && this.statut == 2) {
 
-            z= new CheckGrille(this.gJ).Corriger();
+            z = new CheckGrille(this.gJ).Corriger();
 
             if (z != 0) {
                 JOptionPane.showMessageDialog(null, "Votre grille est incorrecte.Veuillez la modifier", "Erreur",
@@ -80,16 +86,16 @@ public class JeuEvent implements ActionListener {
                 int choixPopup = JOptionPane.showOptionDialog(null, "Choisissez une difficulté", " Difficulté",
                         JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, difficulte,
                         difficulte[2]);
-                int nbCaseVide=0;
+                int nbCaseVide = 0;
 
-                if(choixPopup==0){
-                    nbCaseVide=40;
-                }else if(choixPopup==1){
-                    nbCaseVide=50;
-                }else if(choixPopup==2){
-                    nbCaseVide=60;
+                if (choixPopup == 0) {
+                    nbCaseVide = 40;
+                } else if (choixPopup == 1) {
+                    nbCaseVide = 50;
+                } else if (choixPopup == 2) {
+                    nbCaseVide = 60;
                 }
-                new Grille(this.gJ,nbCaseVide).supprCase();
+                new Grille(this.gJ, nbCaseVide).supprCase();
                 new SauvegarderGrille(this.gJ, nomGrille);
 
                 JOptionPane.showMessageDialog(null, "Sauvegarde terminée ! Retour au menu principal.",
@@ -99,7 +105,7 @@ public class JeuEvent implements ActionListener {
                 new MenuJouerPrincipal();
             }
         }
-        
+
         if (button == "Go") {
             z = new CheckGrille(this.gJ).Corriger();
             if (z != 0) {

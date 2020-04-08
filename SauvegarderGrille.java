@@ -6,25 +6,27 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * La classe <code>SauvegarderGrille</code> est utilisée pour sauvegarder une grille dans un fichier .gri
+ * La classe <code>SauvegarderGrille</code> est utilisée pour sauvegarder une
+ * grille dans un fichier .gri
  * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
  */
 public class SauvegarderGrille {
-    
-/**
- * Constructeur qui récupère la grille et le nom de la grille
- * @param grille int[][]
- * @param nomG String
- */
-    public SauvegarderGrille(int[][] grille,String nomG) {
+
+    /**
+     * Constructeur qui récupère la grille et le nom de la grille
+     * 
+     * @param grille int[][]
+     * @param nomG   String
+     */
+    public SauvegarderGrille(int[][] grille, String nomG) {
 
         int[] temp = new int[9];
         int temp2 = 0;
-        
+
         try {
-            File filename = new File("./grille/"+nomG+".gri");
+            File filename = new File("./grille/" + nomG + ".gri");
             filename.createNewFile();
             /* écriture fichier */
             try {
@@ -40,10 +42,10 @@ public class SauvegarderGrille {
                     file.writeInt(temp2);
                 }
                 file.close();
-            }catch (FileNotFoundException e) {// si fichier n existe pas 
+            } catch (FileNotFoundException e) {// si fichier n existe pas
                 System.err.println("pas de fichier trouver : " + e.getMessage());
             } /* le reste */
-            
+
         } catch (IOException e) {
             System.err.println(e.toString());
         }

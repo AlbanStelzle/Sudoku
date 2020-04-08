@@ -6,13 +6,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
- * La classe <code>MenuJouerPrincipal</code> est utilisée pour afficher le menu principal laissant le choix à 3 options au joueur
+ * La classe <code>MenuJouerPrincipal</code> est utilisée pour afficher le menu
+ * principal laissant le choix à 3 options au joueur
  * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
  */
 public class MenuJouerPrincipal {
-
+        /**
+         * Constructeur qui affiche le menu principal du jeu lui proposant de jouer sur
+         * une grille ou d'en créer une
+         */
         public MenuJouerPrincipal() {
                 JFrame fenetre = new JFrame();
                 JLabel titre = new JLabel("MENU PRINCIPAL");

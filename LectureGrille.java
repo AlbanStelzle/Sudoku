@@ -5,25 +5,32 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- * La classe <code>LectureGrille</code> est utilisée pour lire un fichier contenant les informations d'une grille et y traduire pour la mettre dans un tableau
+ * La classe <code>LectureGrille</code> est utilisée pour lire un fichier
+ * contenant les informations d'une grille et y traduire pour la mettre dans un
+ * tableau
+ * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
  */
 public class LectureGrille {
-   private int[][] grille = new int[9][9];
-   private String nomG;
-/**
- * Constructeur qui récupère le nom de la grille(donc du fichier)
- * @param filename String
- */
+    private int[][] grille = new int[9][9];
+    private String nomG;
+
+    /**
+     * Constructeur qui récupère le nom de la grille(donc du fichier)
+     * 
+     * @param filename String
+     */
     public LectureGrille(String filename) {
-        this.nomG=filename;
+        this.nomG = filename;
     }
+
     /**
      * Méthode qui lit un fichier et renvoie la grille
+     * 
      * @return grille int[][]
      */
-    public int[][] read(){
+    public int[][] read() {
         int temp = 0;
         int[] temp3 = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         String temp2;
@@ -57,7 +64,7 @@ public class LectureGrille {
         } catch (IOException e) {
             System.err.println(e.toString());
         }
-        return this.grille;    
+        return this.grille;
 
     }
 }

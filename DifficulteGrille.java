@@ -3,12 +3,17 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * La classe <code>DifficulteGrille</code> est utilisée pour afficher un menu où plusieurs difficultés sont proposées au joueur
+ * La classe <code>DifficulteGrille</code> est utilisée pour afficher un menu où
+ * plusieurs difficultés sont proposées au joueur
  * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
  */
 public class DifficulteGrille {
+    /**
+     * Constructeur affichant un menu proposant différentes difficultés aux joueurs
+     * (facile, moyen, difficile)
+     */
     public DifficulteGrille() {
         JFrame fenetre = new JFrame();
         JButton facile = new JButton("FACILE");

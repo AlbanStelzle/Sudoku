@@ -3,13 +3,17 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * La classe <code>TypeGrille</code> est utilisée pour afficher un menu et de choisir entre créer une grille Aleatoire ou une grille manuelle
+ * La classe <code>TypeGrille</code> est utilisée pour afficher un menu et de
+ * choisir entre créer une grille Aleatoire ou une grille manuelle
  * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
  */
 public class TypeGrille {
-
+    /**
+     * Constructeur qui propose au joueur de créer une grille aléatoirement ou
+     * manuellement
+     */
     public TypeGrille() {
         JFrame fenetre = new JFrame();
         JButton alea = new JButton("GRILLE ALEATOIRE");

@@ -1,5 +1,7 @@
 /**
- * La classe <code>CheckGrille</code> est utilisée pour vérifier si une grille remplie correctement les règles du sudoku en faisant appel à une méthode de la classe Grille
+ * La classe <code>CheckGrille</code> est utilisée pour vérifier si une grille
+ * remplie correctement les règles du sudoku en faisant appel à une méthode de
+ * la classe Grille
  * 
  * @version 1.1
  * @author Alban Stelzle, Marcus Antoine
@@ -7,13 +9,21 @@
 public class CheckGrille {
     private int[][] g;
 
+    /**
+     * Constructeur qui prend la grille comme paramètre
+     * 
+     * @param grille
+     */
     public CheckGrille(int[][] grille) {
         this.g = grille;
     }
-/**
- * Méthode servant à corriger la grille en faisant appel à un autre classe Grille
- * @return un nombre, s'il est différent de 0 alors la grille est incorrecte.
- */
+
+    /**
+     * Méthode servant à corriger la grille en faisant appel à un autre classe
+     * Grille
+     * 
+     * @return un nombre, s'il est différent de 0 alors la grille est incorrecte.
+     */
     public int Corriger() {
         int z = 0;
         Grille grille = new Grille(this.g);
