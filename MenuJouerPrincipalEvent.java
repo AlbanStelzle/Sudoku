@@ -3,15 +3,26 @@ import javax.swing.JFrame;
 import java.awt.event.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-
+/**
+ * La classe <code>JeuEvent</code> est utilisée pour gérer l'utilisation des boutons de la classe MenuJouerPrincipal
+ * 
+ * @version 1.1
+ * @author Alban Stelzle, Marcus Antoine
+ */
 public class MenuJouerPrincipalEvent implements ActionListener {
 
         private JFrame fenetre;
 
-
+/**
+ * Constructeur qui récupère la fenêtre
+ * @param window JFrame
+ */
         public MenuJouerPrincipalEvent(JFrame window) {
                 this.fenetre = window;
         }
+        /**
+         * Méthode qui gère les évènements en fonction du texte du bouton utilisé
+         */
         public void actionPerformed(ActionEvent e) {
                 String nomButton = e.getActionCommand();
 

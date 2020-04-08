@@ -5,6 +5,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+/**
+ * La classe <code>AccueilMenu</code> est utilisée pour afficher un menu d'accueil au joueur
+ * 
+ * @version 1.1
+ * @author Alban Stelzle, Marcus Antoine
+ */
 public class AccueilMenu {
 
 public AccueilMenu(){

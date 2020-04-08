@@ -14,6 +14,12 @@ import java.awt.Color;
 
 import java.text.NumberFormat;
 
+/**
+ * La classe <code>Jeu</code> est utilisée pour jouer ou créer une grille
+ * 
+ * @version 1.1
+ * @author Alban Stelzle, Marcus Antoine
+ */
 public class Jeu {
     private String nomG;
     private JButton button = new JButton();
@@ -21,12 +27,22 @@ public class Jeu {
     private int[][] g;
     private int statut;
 
+/**
+ * Constructeur prenant qu'une grille
+ * 
+ * @param grille int[][]
+ *
+ */
     public Jeu(int[][] grille) {
         this.button.setText("Sauvegarder");
         this.g = grille;
         this.statut = 1;
     }
-
+/**
+ * Constructeur prenant qu'une grille et un nom de grille
+ * @param grille int[][]
+ * @param filename nom de grille
+ */
     public Jeu(int[][] grille, String filename) {
         this.nomG = filename;
         this.button.setText("Go");
@@ -35,6 +51,13 @@ public class Jeu {
 
     }
 
+/**
+ * Constructeur prenant qu'une grille, un nom de grille et un double pour afficher le timer
+ * 
+ * @param grille int[][]
+ * @param filename string
+ * @param time double
+ */
     public Jeu(int[][] grille, String filename, double time) {
         this.nomG = filename;
         this.button.setText("Retour au menu principal");
@@ -43,6 +66,10 @@ public class Jeu {
         this.t = time;
 
     }
+/**
+ * Constructeur prenant qu'un nom de mode de jeu (manuel ou automatique)
+ * @param mode
+ */
     public Jeu(String mode){
         this.statut = 2;
         this.g = new int[9][9];
@@ -50,7 +77,9 @@ public class Jeu {
         this.button.setText("Sauvegarder");
 
     }
-
+/**
+ * Méthode qui affiche la grille au joueur, et en fonction du constructeur utilisée, permet de jouer ou de créer une grille
+ */
     public void Jouer() {
         JFrame fenetre = new JFrame();
         GridBagLayout gestionnaire = new GridBagLayout();

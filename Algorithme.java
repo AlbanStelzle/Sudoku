@@ -1,3 +1,9 @@
+/**
+ * La classe <code>Algorithme</code> est contient un algorithme servant à résoudre une grille automatiquement
+ * 
+ * @version 1.1
+ * @author Alban Stelzle, Marcus Antoine
+ */
 public class Algorithme {
 	private int[][] g;
 
@@ -5,7 +11,10 @@ public class Algorithme {
 		this.g = g;
 
 	}
-
+/**
+ * Renvoie un booleen en fonction de la résolution en cours de la grille
+ * @return true ou false en fonction d'où en est la résolution
+ */
 	public boolean automatique() {
 
 		for (int i = 0; i < 9; i++) {
@@ -33,7 +42,10 @@ public class Algorithme {
 		}
 		return true; // La grille est complétée, on renvoie true pour afficher la suite du programme.
 	}
-
+/**
+ * renvoie la grille
+ * @return une grille de jeu int[][]
+*/
 	public int[][] getGrid() { // Envoie la grille finale pour l'utilisateur.
 		return this.g;
 

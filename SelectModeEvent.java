@@ -1,6 +1,13 @@
 import java.awt.event.*;
 import javax.swing.JFrame;
 
+/**
+ * La classe <code>SelectModeEvent</code> est utilisée pour gérer l'utilisation des
+ * boutons et d'y utiliser un timer si le mode automatique est choisit
+ * 
+ * @version 1.1
+ * @author Alban Stelzle, Marcus Antoine
+ */
 public class SelectModeEvent implements ActionListener {
     private JFrame fenetre;
     private String nomFichier;

@@ -3,18 +3,31 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+/**
+ * La classe <code>JeuEvent</code> est utilisée pour gérer l'utilisation des boutons et de convertir la grille de texte en grille d'entier
+ * 
+ * @version 1.1
+ * @author Alban Stelzle, Marcus Antoine
+ */
 public class JeuEvent implements ActionListener {
     private int[][] gJ = new int[9][9];
     private JFormattedTextField[][] text = new JFormattedTextField[9][9];
     private JFrame fenetre;
     private int statut;
-
+/**
+ * Constructeur qui récupère la grille de texte, la fentre et un entier pour le statut
+ * @param grilleJ int[][]
+ * @param fen JFrame
+ * @param s int
+ */
     public JeuEvent(JFormattedTextField[][] grilleJ, JFrame fen ,int s) {
         this.text = grilleJ;
         this.fenetre = fen;
         this.statut = s;
     }
-
+/**
+ * Méthode qui convertit la grille de texte donnée en grille de int
+ */
     public void ConversionGrille() {
         for (int i = 0; i < 9; i++) {
             for (int y = 0; y < 9; y++) {
@@ -29,7 +42,9 @@ public class JeuEvent implements ActionListener {
             }
         }
     }
-
+/**
+ * Méthode qui récupère les evenement et adapte en fonction de quel type de bouton est utilisé
+ */
     public void actionPerformed(ActionEvent e) {
         String button;
         int z = 0;
