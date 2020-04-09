@@ -31,7 +31,7 @@ public class Algorithme {
 				if (this.g[i][y] == 0) { // Si la case est vide alors on essaye les possibilités
 
 					for (int nb = 1; nb <= 9; nb++) {
-						if (new Grille(this.g).verifTotale(i, y, nb)) { // On vérifie si ca respecte la règle du sodu
+						if (new Grille(this.g).verifTotale(i, y, nb)) { // On vérifie si ca respecte la règle du sudoku
 
 							this.g[i][y] = nb; // On écrit entre nb dans this.g[i][y]
 							if (automatique()) { // On lance la récursivité

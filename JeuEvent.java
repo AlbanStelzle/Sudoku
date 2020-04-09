@@ -78,8 +78,6 @@ public class JeuEvent implements ActionListener {
                         JOptionPane.INFORMATION_MESSAGE);
             } else {
 
-                new Grille(this.gJ).supprCase();
-
                 String nomGrille = JOptionPane.showInputDialog(null, "Veuillez donner un nom à votre grille.",
                         "Nommez votre grille", JOptionPane.QUESTION_MESSAGE);
 
