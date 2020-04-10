@@ -27,6 +27,8 @@ public class SauvegarderGrille {
 
         try {
             File filename = new File("./grille/" + nomG + ".gri");
+            File dossier = new File("./grille/");
+            dossier.mkdir(); // si le dossier ./grille n'existe pas
             filename.createNewFile();
             /* écriture fichier */
             try {
